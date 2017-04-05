@@ -1,6 +1,1 @@
-Credentials cache: API:230A7055-B7B7-40BE-A26C-C0BDDB9478DD
-        Principal: wjohnson@42.US.ORG
-
-  Issued                Expires               Principal
-Apr  4 15:42:16 2017  Apr  5 01:42:16 2017  krbtgt/42.US.ORG@42.US.ORG
-Apr  4 15:42:25 2017  Apr  5 01:42:16 2017  host/vgs-fn1.42.us.org@42.US.ORG
+Apr  4 20:57:11 2017  Apr  5 06:57:11 2017  krbtgt/42.US.ORG@42.US.ORG
