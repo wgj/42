@@ -6,7 +6,7 @@
 /*   By: wjohnson <wjohnson@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/04/08 14:46:10 by wjohnson          #+#    #+#             */
-/*   Updated: 2017/04/09 14:16:18 by wjohnson         ###   ########.fr       */
+/*   Updated: 2017/04/09 15:25:30 by wjohnson         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,60 +20,34 @@
 
 int	ft_putchar(char c);
 
+void print(void) {
+	ft_putchar('x');
+}
+
 int	rush(int x, int y)
 {
-	int		xcounter;
-	int		ycounter;
+	int		xpos;
+	int		ypos;
 
 	if (x == 0 || y == 0) // Remove if function too long.
 	{
 		return (-1);
 	}
-	xcounter = 0;
-	ycounter = 0;
-	x--;
-	y--;
+	xpos = 1;
+	ypos = 1;
 
-	//While xcounter !=x && ycounter!=y
-	while (!(xcounter == x && ycounter == y))
+	// iterate through ypos
+	while (ypos < y)
 	{
-		if (xcounter == x)
+	// iterate thoough xposes
+		while (xpos <= x)
 		{
-			if ((ycounter == y || ycounter == 0) && (y > 1))
-			{
-				ft_putchar('C');
-			} else {
-				ft_putchar('B');
-			}
-			// if xcounter == x;
-			// putchar '\n', increment y, reset x
-			ft_putchar('\n');
-			ycounter++;
-			xcounter = 0;
-			continue;
+			print();
+			xpos++;
 		}
-	// if tests for a, b, c, ' ', putchar, increment x
-		if ((ycounter == 0 && xcounter == 0) || (ycounter == y && xcounter == 0))
-		{
-			ft_putchar('A');
-			xcounter++;
-			continue;
-		}
-		if (((ycounter == 0 || ycounter == y) && (xcounter > 0 && xcounter < x)) || \
-			((xcounter == 0 || xcounter == x) && ycounter > 0 && ycounter < y))
-			{
-				ft_putchar('B');
-				xcounter++;
-				continue;
-			}
-		if ((xcounter != 0 || xcounter != x) && (ycounter != 0 && ycounter != y))
-		{
-			ft_putchar(' ');
-			xcounter++;
-			continue;
-		}
+		ft_putchar('\n'); //Replace with print()
+		xpos = 1;
+		ypos++;
 	}
-	ft_putchar('C');
-	ft_putchar('\n');
 	return (0);
 }
