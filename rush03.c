@@ -6,7 +6,7 @@
 /*   By: wjohnson <wjohnson@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/04/08 14:46:10 by wjohnson          #+#    #+#             */
-/*   Updated: 2017/04/09 13:54:55 by wjohnson         ###   ########.fr       */
+/*   Updated: 2017/04/09 14:16:18 by wjohnson         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,34 +39,41 @@ int	rush(int x, int y)
 	{
 		if (xcounter == x)
 		{
-			if (ycounter == y || ycounter == 0) 
+			if ((ycounter == y || ycounter == 0) && (y > 1))
 			{
 				ft_putchar('C');
+			} else {
+				ft_putchar('B');
 			}
 			// if xcounter == x;
 			// putchar '\n', increment y, reset x
 			ft_putchar('\n');
 			ycounter++;
 			xcounter = 0;
+			continue;
 		}
 	// if tests for a, b, c, ' ', putchar, increment x
 		if ((ycounter == 0 && xcounter == 0) || (ycounter == y && xcounter == 0))
 		{
 			ft_putchar('A');
+			xcounter++;
+			continue;
 		}
 		if (((ycounter == 0 || ycounter == y) && (xcounter > 0 && xcounter < x)) || \
 			((xcounter == 0 || xcounter == x) && ycounter > 0 && ycounter < y))
 			{
 				ft_putchar('B');
+				xcounter++;
+				continue;
 			}
 		if ((xcounter != 0 || xcounter != x) && (ycounter != 0 && ycounter != y))
 		{
 			ft_putchar(' ');
-
+			xcounter++;
+			continue;
 		}
-
-		xcounter++;
 	}
+	ft_putchar('C');
 	ft_putchar('\n');
 	return (0);
 }
