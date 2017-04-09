@@ -6,7 +6,7 @@
 /*   By: wjohnson <wjohnson@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/04/08 14:46:10 by wjohnson          #+#    #+#             */
-/*   Updated: 2017/04/08 16:59:43 by wjohnson         ###   ########.fr       */
+/*   Updated: 2017/04/08 19:00:22 by wjohnson         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,10 +32,15 @@ int	rush(int x, int y)
 	}
 	xcounter = 0;
 	ycounter = 0;
-	while (ycounter <= y)
-	{
-		while (xcounter <= x)
-		{
+
+	//While xcounter !=x && ycounter!=y
+	// if xcounter == x;
+	// putchar '\n', increment y, reset x
+	// if tests for a, b, c, ' ', putchar, increment x
+
+	//These tests look good.
+	// need b test.
+	// need ' ' test.
 			if ((xcounter == 0 && ycounter == y) || \
 				(xcounter == 0 && ycounter == 0))
 			{
@@ -48,9 +53,7 @@ int	rush(int x, int y)
 				c = 'C';
 				ft_putchar(c);
 			}
-			ycounter++ && ft_putchar('\n');
-		}
-		xcounter++;
-	}
+			ft_putchar('\n');
+			ycounter++;
 	return (0);
 }
