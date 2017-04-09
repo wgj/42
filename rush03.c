@@ -6,11 +6,11 @@
 /*   By: wjohnson <wjohnson@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/04/08 14:46:10 by wjohnson          #+#    #+#             */
-/*   Updated: 2017/04/08 19:00:22 by wjohnson         ###   ########.fr       */
+/*   Updated: 2017/04/08 19:36:58 by wjohnson         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-/*
+/* 	Remove if function too long.
 **		rush(5,3) should display:
 **		$>./a.out
 **		ABBBC
@@ -26,7 +26,7 @@ int	rush(int x, int y)
 	int		ycounter;
 	char	c;
 
-	if (x == 0 || y == 0)
+	if (x == 0 || y == 0) // Remove if function too long.
 	{
 		return (-1);
 	}
