@@ -6,15 +6,14 @@
 /*   By: wjohnson <wjohnson@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/04/08 14:52:17 by wjohnson          #+#    #+#             */
-/*   Updated: 2017/04/09 14:29:22 by wjohnson         ###   ########.fr       */
+/*   Updated: 2017/04/09 16:46:32 by wjohnson         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_putchar.c"
-#include "rush03.c"
+void	rush(int x, int y);
 
-int main(void)
+int		main(void)
 {
-	rush(1, 5);
+	rush(5, 5);
 	return (0);
 }
