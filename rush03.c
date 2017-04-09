@@ -6,7 +6,7 @@
 /*   By: wjohnson <wjohnson@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/04/08 14:46:10 by wjohnson          #+#    #+#             */
-/*   Updated: 2017/04/08 23:26:14 by wjohnson         ###   ########.fr       */
+/*   Updated: 2017/04/09 13:54:55 by wjohnson         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,13 +59,14 @@ int	rush(int x, int y)
 			{
 				ft_putchar('B');
 			}
-		if(xcounter != 0 && xcounter != x && ycounter != 0 && xcounter != y)
+		if ((xcounter != 0 || xcounter != x) && (ycounter != 0 && ycounter != y))
 		{
 			ft_putchar(' ');
+
 		}
 
 		xcounter++;
 	}
- 
+	ft_putchar('\n');
 	return (0);
 }
