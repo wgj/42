@@ -6,11 +6,11 @@
 /*   By: wjohnson <wjohnson@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/04/08 14:46:10 by wjohnson          #+#    #+#             */
-/*   Updated: 2017/04/09 14:16:18 by wjohnson         ###   ########.fr       */
+/*   Updated: 2017/04/09 18:10:44 by wjohnson         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-/* 	Remove if function too long.
+/*
 **		rush(5,3) should display:
 **		$>./a.out
 **		ABBBC
@@ -18,62 +18,71 @@
 **		ABBBC
 */
 
-int	ft_putchar(char c);
+int		ft_putchar(char c);
 
-int	rush(int x, int y)
+/*
+** Print() prints elements of Rush()'s array,
+** and contains the logic for the look of the array.
+*/
+
+void	print(int xpos, int ypos, int x, int y)
 {
-	int		xcounter;
-	int		ycounter;
+	char	c;
+	char	wall;
+	char	left_corner;
+	char	right_corner;
 
-	if (x == 0 || y == 0) // Remove if function too long.
+	c = ' ';
+	wall = 'B';
+	left_corner = 'A';
+	right_corner = 'C';
+	if (((xpos > 1 && xpos < x) && ypos == 1) || \
+		(xpos == 1 && (ypos > 1 && ypos < y)) || \
+		(xpos == x && (ypos > 1 && ypos < y)) || \
+		((xpos > 1 && xpos < x) && ypos == y))
 	{
-		return (-1);
+		c = wall;
 	}
-	xcounter = 0;
-	ycounter = 0;
-	x--;
-	y--;
-
-	//While xcounter !=x && ycounter!=y
-	while (!(xcounter == x && ycounter == y))
+	if ((xpos == 1 && ypos == 1) || (xpos == 1 && ypos == y))
 	{
-		if (xcounter == x)
+		c = left_corner;
+	}
+	if ((x > 1 && ((xpos == x && ypos == 1) || (xpos == x && ypos == y))))
+	{
+		c = right_corner;
+	}
+	ft_putchar(c);
+}
+
+/*
+** Rush() will loop through an array of x by y,
+** calling print() at every position.
+*/
+
+int		rush(int x, int y)
+{
+	int		xpos;
+	int		ypos;
+
+	xpos = 1;
+	ypos = 1;
+	while (ypos <= y)
+	{
+		while (xpos <= x)
 		{
-			if ((ycounter == y || ycounter == 0) && (y > 1))
-			{
-				ft_putchar('C');
-			} else {
-				ft_putchar('B');
-			}
-			// if xcounter == x;
-			// putchar '\n', increment y, reset x
+			print(xpos, ypos, x, y);
+			xpos++;
+		}
+		if (xpos > x)
+		{
 			ft_putchar('\n');
-			ycounter++;
-			xcounter = 0;
-			continue;
 		}
-	// if tests for a, b, c, ' ', putchar, increment x
-		if ((ycounter == 0 && xcounter == 0) || (ycounter == y && xcounter == 0))
+		else
 		{
-			ft_putchar('A');
-			xcounter++;
-			continue;
+			print(xpos, ypos, x, y);
 		}
-		if (((ycounter == 0 || ycounter == y) && (xcounter > 0 && xcounter < x)) || \
-			((xcounter == 0 || xcounter == x) && ycounter > 0 && ycounter < y))
-			{
-				ft_putchar('B');
-				xcounter++;
-				continue;
-			}
-		if ((xcounter != 0 || xcounter != x) && (ycounter != 0 && ycounter != y))
-		{
-			ft_putchar(' ');
-			xcounter++;
-			continue;
-		}
+		xpos = 1;
+		ypos++;
 	}
-	ft_putchar('C');
-	ft_putchar('\n');
 	return (0);
 }
