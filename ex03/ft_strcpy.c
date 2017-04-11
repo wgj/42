@@ -6,7 +6,7 @@
 /*   By: wjohnson <wjohnson@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/04/11 09:51:01 by wjohnson          #+#    #+#             */
-/*   Updated: 2017/04/11 10:20:40 by wjohnson         ###   ########.fr       */
+/*   Updated: 2017/04/11 11:07:07 by wjohnson         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ char	*ft_strcpy(char *dest, char *src)
 	{
 		dest[i] = src[i];
 		i++;
-		if (src[i] == '\0')	
+		if (src[i] == '\0')
 		{
 			dest[i] = '\0';
 		}
