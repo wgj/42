@@ -6,7 +6,7 @@
 /*   By: wjohnson <wjohnson@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/04/12 22:47:48 by wjohnson          #+#    #+#             */
-/*   Updated: 2017/04/12 23:10:28 by wjohnson         ###   ########.fr       */
+/*   Updated: 2017/04/12 23:14:51 by wjohnson         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ int		main(int argc, char *argv[])
 
 	if (argc == 1)
 	{
-		return (0);
+		return (1);
 	}
 	i = 1;
 	while (i < argc)
@@ -31,5 +31,5 @@ int		main(int argc, char *argv[])
 		ft_putchar('\n');
 		i++;
 	}
-	return (1);
+	return (0);
 }
