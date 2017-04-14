@@ -6,7 +6,7 @@
 /*   By: wjohnson <wjohnson@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/04/13 18:48:47 by wjohnson          #+#    #+#             */
-/*   Updated: 2017/04/13 20:11:39 by wjohnson         ###   ########.fr       */
+/*   Updated: 2017/04/13 21:01:24 by wjohnson         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,8 @@ int		ft_hour(int h)
 		return (h -= 12);
 	if (h == 25)
 		return (1);
+	if (h == 0)
+		return (12);
 	return (h);
 }
 
