@@ -6,7 +6,7 @@
 /*   By: wjohnson <wjohnson@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/04/15 18:56:06 by wjohnson          #+#    #+#             */
-/*   Updated: 2017/04/16 14:06:59 by acen             ###   ########.fr       */
+/*   Updated: 2017/04/16 16:40:57 by wjohnson         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -109,8 +109,6 @@ int	is_valid(char square, int row, int col, char **grid)
 {
 	if (grid[row][col] != '.')
 		return (0);
-	// TODO swap row and col
-	// TODO rename row and col to x y, respectively.
 	// TODO check that row and rol are valid input. Though maybe this should be done on parse?
 	// TODO check that square is valid input.
 	// TODO figure out a way to see grid a valid input.
