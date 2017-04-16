@@ -6,21 +6,38 @@
 /*   By: wjohnson <wjohnson@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/04/15 18:56:06 by wjohnson          #+#    #+#             */
-/*   Updated: 2017/04/15 19:03:41 by wjohnson         ###   ########.fr       */
+/*   Updated: 2017/04/15 22:14:44 by wjohnson         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 int	is_vunit_valid(char square, int row, int col, char **grid)
 {
-	(void)square;
-	(void)row;
-	(void)col;
-	(void)grid;
+	int i;
+	char peer;
+
+	i = 0;
 	// for every peer in grid[x][i]
-	// if grid[x][y] is not '0', return 0;
-	// if peer is '0', (do nothing? don't check?, wanted to `continue`, but doesn't make sense in `while`'s need to increment.)
-	// if peer is == square, return 0;
-	// if peer is > '9'+1 or < '0'-1, return 0;
+	while (i < 9)
+	{
+		peer = grid[row][i];
+		i++;
+		// if grid[x][y] is not '.', return 0;
+		if (peer != '.')
+		{
+			return (0);
+		}
+		// if peer is == square, return 0;
+		if (peer == square)
+		{
+			return (0);
+		}
+		// if peer is > '9'+1 or < '0'-1, return 0;
+		if (peer > '9' + 1 || peer < '0' - 1)
+		{
+			return (0);
+		}
+		// if peer is '.', (do nothing? don't check?, wanted to `continue`, but doesn't make sense in `while`'s need to increment.)
+	}
 	return (1);
 }
 
@@ -44,7 +61,7 @@ int	is_bunit_valid(char square, int row, int col, char **grid)
 /*
 ** Is_valid check whether a given square can legally occupy in the vertical,
 ** horizontal, box units of grid. Returns non-zero if no conflicting peers
-** are found, and zero if grid[x][y] doesn't contain '0' (i.e., isn't empty).
+** are found, and zero if grid[x][y] doesn't contain '.' (i.e., isn't empty).
 */
 int	is_valid(char square, int row, int col, char **grid)
 {
