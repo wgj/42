@@ -6,7 +6,7 @@
 /*   By: wjohnson <wjohnson@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/04/15 18:56:06 by wjohnson          #+#    #+#             */
-/*   Updated: 2017/04/16 16:40:57 by wjohnson         ###   ########.fr       */
+/*   Updated: 2017/04/16 16:48:31 by wjohnson         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -110,7 +110,8 @@ int	is_valid(char square, int row, int col, char **grid)
 	if (grid[row][col] != '.')
 		return (0);
 	// TODO check that row and rol are valid input. Though maybe this should be done on parse?
-	// TODO check that square is valid input.
+		if (!(square >= '0' && square <= '9'))
+			return (0);
 	// TODO figure out a way to see grid a valid input.
 	// TODO add function declaration to sudoku.h
 	// TODO add precheck that grid[row][col] is empty, return false.
