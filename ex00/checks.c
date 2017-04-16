@@ -6,7 +6,7 @@
 /*   By: wjohnson <wjohnson@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/04/15 18:56:06 by wjohnson          #+#    #+#             */
-/*   Updated: 2017/04/16 02:37:03 by acen             ###   ########.fr       */
+/*   Updated: 2017/04/16 12:26:36 by wjohnson         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,6 @@ int	is_vunit_valid(char square, int row, int col, char **grid)
 	while (i < 9)
 	{
 		peer = grid[row][i];
-		i++;
 		// if grid[x][y] is not '.', return 0;
 		if (peer != '.')
 		{
@@ -37,6 +36,7 @@ int	is_vunit_valid(char square, int row, int col, char **grid)
 			return (0);
 		}
 		// if peer is '.', (do nothing? don't check?, wanted to `continue`, but doesn't make sense in `while`'s need to increment.)
+		i++;
 	}
 	return (1);
 }
