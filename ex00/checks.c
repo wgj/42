@@ -6,7 +6,7 @@
 /*   By: wjohnson <wjohnson@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/04/15 18:56:06 by wjohnson          #+#    #+#             */
-/*   Updated: 2017/04/15 22:14:44 by wjohnson         ###   ########.fr       */
+/*   Updated: 2017/04/16 02:37:03 by acen             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,19 +43,61 @@ int	is_vunit_valid(char square, int row, int col, char **grid)
 
 int	is_hunit_valid(char square, int row, int col, char **grid)
 {
-	(void)square;
-	(void)row;
-	(void)col;
-	(void)grid;
-	return (0);
+	// i am guessing the row, col is the current coordinate of square?
+	int i;
+	char peer;
+
+	i = 0;
+	while (i < 9)
+	{
+		peer = grid[i][col];
+		if (peer < '0' || peer > '9')
+			return (0); //this should probably return an exit error
+		if (square == peer)
+			return (0);
+		//why do we return false if peer is not empty? we should probably just ignore it?
+		i++;
+	}
+	return (1);
 }
 int	is_bunit_valid(char square, int row, int col, char **grid)
 {
-	(void)square;
-	(void)row;
-	(void)col;
-	(void)grid;
-	return (0);
+	int corner_row;
+	int corner_col;
+
+	corner_row = 0;
+	corner_col = 0; //i can probably move this to a diff function...
+	if (row <= 2)
+		corner_row = 0;
+	if (row <= 5)
+		corner_row = 3;
+	if (row <= 8)
+		corner_row = 6;
+	if (col <= 2)
+		corner_col = 0;
+	if (col <= 5)
+		corner_col = 3;
+	if (col <= 8)
+		corner_col = 6;
+
+	int i;
+	int j;
+
+	i = corner_row;
+	j = corner_col;
+
+	while (i < corner_row + 3)
+	{
+		j = corner_col;
+		while (j < corner_col + 3)
+		{
+			if (grid[i][j] == square && i != row && j != col)
+				return (0);
+			j++;
+		}
+		i++;
+	}
+	return (1);
 }
 
 /*
