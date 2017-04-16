@@ -6,7 +6,7 @@
 /*   By: wjohnson <wjohnson@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/04/15 18:56:06 by wjohnson          #+#    #+#             */
-/*   Updated: 2017/04/16 13:57:42 by wjohnson         ###   ########.fr       */
+/*   Updated: 2017/04/16 14:06:59 by acen             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,17 +21,13 @@ int	is_vunit_valid(char square, int row, int col, char **grid)
 	{
 		peer = grid[row][i];
 		// if grid[x][y] is not '.', return 0;
-		if (peer != '.')
-		{
-			return (0);
-		}
 		// if peer is == square, return 0;
 		if (peer == square)
 		{
 			return (0);
 		}
 		// if peer is > '9'+1 or < '0'-1, return 0;
-		if (peer > '9' + 1 || peer < '0' - 1)
+		if (peer > '9' || peer < '0')
 		{
 			return (0);
 		}
@@ -94,7 +90,7 @@ int	is_bunit_valid(char square, int row, int col, char **grid)
 		j = corner_col;
 		while (j < corner_col + 3)
 		{
-			if (grid[i][j] == square && i != row && j != col) // In the above functions, I was making the presumption that grid[row][col] will be empty, so it's safe to check. This is another example where we need to figure out if our checks should be "before writing a sqaure" or "after writing a square". -wgj
+			if (grid[i][j] == square) // In the above functions, I was making the presumption that grid[row][col] will be empty, so it's safe to check. This is another example where we need to figure out if our checks should be "before writing a sqaure" or "after writing a square". -wgj
 				return (0);
 			j++;
 		}
@@ -109,7 +105,10 @@ int	is_bunit_valid(char square, int row, int col, char **grid)
 ** are found, and zero if grid[x][y] doesn't contain '.' (i.e., isn't empty).
 */
 int	is_valid(char square, int row, int col, char **grid)
+
 {
+	if (grid[row][col] != '.')
+		return (0);
 	// TODO swap row and col
 	// TODO rename row and col to x y, respectively.
 	// TODO check that row and rol are valid input. Though maybe this should be done on parse?
