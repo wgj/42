@@ -6,7 +6,7 @@
 /*   By: wjohnson <wjohnson@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/04/15 18:56:06 by wjohnson          #+#    #+#             */
-/*   Updated: 2017/04/16 17:24:30 by wjohnson         ###   ########.fr       */
+/*   Updated: 2017/04/16 17:26:37 by wjohnson         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,11 +23,6 @@ int	is_col_valid(char square, int row, int col, char **grid)
 		// if grid[x][y] is not '.', return 0;
 		// if peer is == square, return 0;
 		if (peer == square)
-		{
-			return (0);
-		}
-		// if peer is > '9'+1 or < '0'-1, return 0;
-		if (peer > '9' || peer < '0')
 		{
 			return (0);
 		}
@@ -48,9 +43,6 @@ int	is_row_valid(char square, int row, int col, char **grid)
 	while (i < 9)
 	{
 		peer = grid[i][col];
-		if (peer < '0' || peer > '9')
-			return (0); //this should probably return an exit error
-						// Agreed, but I think that's up to the context of the caller of  is_valid(). -wgj
 		if (square == peer)
 			return (0);
 		//why do we return false if peer is not empty? we should probably just ignore it?
