@@ -6,7 +6,7 @@
 /*   By: lkaser <lkaser@student.42.us.org>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/04/16 14:39:44 by lkaser            #+#    #+#             */
-/*   Updated: 2017/04/16 20:41:21 by lkaser           ###   ########.fr       */
+/*   Updated: 2017/04/16 20:47:38 by lkaser           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,12 +41,12 @@ int	solve(char **grid)
 {
 	int row;
 	int col;
-	int num;
+	char num;
 
 	if	(!get_empty_square(grid, &row, &col))
 		return (1);
-	num = 1;
-	while (num < 10)
+	num = '1';
+	while (num <= '9')
 	{
 		if (is_valid(num, row, col, grid))
 		{

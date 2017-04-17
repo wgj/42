@@ -6,7 +6,7 @@
 /*   By: lkaser <lkaser@student.42.us.org>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/04/15 17:25:06 by lkaser            #+#    #+#             */
-/*   Updated: 2017/04/16 20:40:34 by lkaser           ###   ########.fr       */
+/*   Updated: 2017/04/16 20:47:55 by lkaser           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -89,6 +89,5 @@ int		main(int argc, char **argv)
 		write(1, "\n", 1);
 		++grid;
 	}
-	free(grid);
 	return (0);
 }
