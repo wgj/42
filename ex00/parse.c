@@ -6,7 +6,7 @@
 /*   By: lkaser <lkaser@student.42.us.org>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/04/15 17:25:06 by lkaser            #+#    #+#             */
-/*   Updated: 2017/04/16 20:47:55 by lkaser           ###   ########.fr       */
+/*   Updated: 2017/04/16 21:24:08 by lkaser           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,21 @@ int		len(char *str)
 	while (*(str++))
 		++len;
 	return (len);
+}
+
+void	print(char *str)
+{
+	int i;
+
+	i = 0;
+	while (i < 8)
+	{
+		write(1, &str[i], 1);
+		write(1, " ", 1);
+		++i;
+	}
+	write(1, &str[i], 1);
+	write(1, "\n", 1);
 }
 
 int		validate_grid(char **grid)
@@ -85,8 +100,7 @@ int		main(int argc, char **argv)
 	solve(grid);
 	while (*grid)
 	{
-		write(1, *grid, 9);
-		write(1, "\n", 1);
+		print(*grid);
 		++grid;
 	}
 	return (0);

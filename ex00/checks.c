@@ -6,40 +6,36 @@
 /*   By: wjohnson <wjohnson@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/04/15 18:56:06 by wjohnson          #+#    #+#             */
-/*   Updated: 2017/04/16 20:11:11 by acen             ###   ########.fr       */
+/*   Updated: 2017/04/16 21:05:32 by lkaser           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 int	is_row_valid(char square, int row, int col, char **grid)
 {
 	int		i;
-	char	peer;
 
 	i = 0;
 	while (i < 9)
 	{
-		peer = grid[row][i];
-		if (peer != square && i != col)
-			return (1);
+		if (grid[row][i] == square && i != col)
+			return (0);
 		i++;
 	}
-	return (0);
+	return (1);
 }
 
 int	is_col_valid(char square, int row, int col, char **grid)
 {
 	int		i;
-	char	peer;
 
 	i = 0;
 	while (i < 9)
 	{
-		peer = grid[i][col];
-		if (square != peer && i != row)
-			return (1);
+		if (grid[i][col] == square && i != row)
+			return (0);
 		i++;
 	}
-	return (0);
+	return (1);
 }
 
 int	get_corner_coord(int coord)
@@ -68,13 +64,13 @@ int	is_box_valid(char square, int row, int col, char **grid)
 		j = corner_col;
 		while (j < corner_col + 3)
 		{
-			if (grid[i][j] != square && i != row && j != col)
-				return (1);
+			if (grid[i][j] == square && i != row && j != col)
+				return (0);
 			j++;
 		}
 		i++;
 	}
-	return (0);
+	return (1);
 }
 
 /*
