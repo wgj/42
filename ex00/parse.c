@@ -6,7 +6,7 @@
 /*   By: lkaser <lkaser@student.42.us.org>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/04/15 17:25:06 by lkaser            #+#    #+#             */
-/*   Updated: 2017/04/16 21:28:07 by lkaser           ###   ########.fr       */
+/*   Updated: 2017/04/16 21:37:09 by lkaser           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ int		row_len(char *str)
 	return (len);
 }
 
-void	print_puzzle(char *str)
+void	print_row(char *str)
 {
 	while (*str && *(str + 1))
 	{
@@ -94,10 +94,14 @@ int		main(int argc, char **argv)
 		write(1, "Error\n", 6);
 		return (0);
 	}
-	solve(grid);
+	if (!solve(grid))
+	{
+		write(1, "Error\n", 6);
+		return (0);
+	}
 	while (*grid)
 	{
-		print_puzzle(*grid);
+		print_row(*grid);
 		++grid;
 	}
 	return (0);
