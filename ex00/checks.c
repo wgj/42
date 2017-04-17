@@ -6,11 +6,11 @@
 /*   By: wjohnson <wjohnson@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/04/15 18:56:06 by wjohnson          #+#    #+#             */
-/*   Updated: 2017/04/16 17:54:59 by lkaser           ###   ########.fr       */
+/*   Updated: 2017/04/16 19:23:44 by wjohnson         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	is_col_valid(char square, int row, char **grid)
+int	is_row_valid(char square, int row, char **grid)
 {
 	int i;
 	char peer;
@@ -32,7 +32,7 @@ int	is_col_valid(char square, int row, char **grid)
 	return (1);
 }
 
-int	is_row_valid(char square, int col, char **grid) 
+int	is_col_valid(char square, int col, char **grid) 
 {
 	// i am guessing the row, col is the current coordinate of square?
 	// It's the current coordinate of a "potential" square. If the tests pass, then it's safe to put `char square` into `grid[x][y]`. -wgj
@@ -98,5 +98,5 @@ int	is_box_valid(char square, int row, int col, char **grid)
 */
 int	is_valid(char square, int row, int col, char **grid)
 {
-	return (is_col_valid(square, row, grid) && is_row_valid(square, col, grid) && is_box_valid(square, row, col, grid));
+	return (is_row_valid(square, row, grid) && is_col_valid(square, col, grid) && is_box_valid(square, row, col, grid));
 }
