@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   solve.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lkaser <lkaser@student.42.us.org>          +#+  +:+       +#+        */
+/*   By: wjohnson <wjohnson@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/04/16 14:39:44 by lkaser            #+#    #+#             */
-/*   Updated: 2017/04/16 20:47:38 by lkaser           ###   ########.fr       */
+/*   Updated: 2017/04/16 21:21:03 by wjohnson         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,11 +39,11 @@ int	get_empty_square(char **grid, int *row, int *col)
 
 int	solve(char **grid)
 {
-	int row;
-	int col;
-	char num;
+	int		row;
+	int		col;
+	char	num;
 
-	if	(!get_empty_square(grid, &row, &col))
+	if (!get_empty_square(grid, &row, &col))
 		return (1);
 	num = '1';
 	while (num <= '9')
