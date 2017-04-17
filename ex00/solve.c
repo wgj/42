@@ -6,7 +6,7 @@
 /*   By: lkaser <lkaser@student.42.us.org>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/04/16 14:39:44 by lkaser            #+#    #+#             */
-/*   Updated: 2017/04/16 14:49:00 by lkaser           ###   ########.fr       */
+/*   Updated: 2017/04/16 18:13:52 by lkaser           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ int		get_empty_square(char **grid, int *row, int *col)
 	while (grid[r])
 	{
 		c = 0;
-		while(grid[r][c])
+		while (grid[r][c])
 		{
 			if (grid[r][c] == '.')
 			{
