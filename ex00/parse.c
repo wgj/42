@@ -6,13 +6,13 @@
 /*   By: lkaser <lkaser@student.42.us.org>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/04/15 17:25:06 by lkaser            #+#    #+#             */
-/*   Updated: 2017/04/16 21:26:36 by lkaser           ###   ########.fr       */
+/*   Updated: 2017/04/16 21:28:07 by lkaser           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "sudoku.h"
 
-int		len(char *str)
+int		row_len(char *str)
 {
 	int len;
 
@@ -22,7 +22,7 @@ int		len(char *str)
 	return (len);
 }
 
-void	print(char *str)
+void	print_puzzle(char *str)
 {
 	while (*str && *(str + 1))
 	{
@@ -70,7 +70,7 @@ char	**parse_arguments(int argc, char **argv)
 		return (NULL);
 	char_count = 0;
 	while (--argc > 0)
-		char_count += len(argv[argc]);
+		char_count += row_len(argv[argc]);
 	if (char_count != 81)
 		return (NULL);
 	++argv;
@@ -97,7 +97,7 @@ int		main(int argc, char **argv)
 	solve(grid);
 	while (*grid)
 	{
-		print(*grid);
+		print_puzzle(*grid);
 		++grid;
 	}
 	return (0);
