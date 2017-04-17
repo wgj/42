@@ -6,7 +6,7 @@
 /*   By: lkaser <lkaser@student.42.us.org>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/04/16 14:39:44 by lkaser            #+#    #+#             */
-/*   Updated: 2017/04/16 19:50:30 by lkaser           ###   ########.fr       */
+/*   Updated: 2017/04/16 20:41:21 by lkaser           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,11 +51,11 @@ int	solve(char **grid)
 		if (is_valid(num, row, col, grid))
 		{
 			grid[row][col] = num;
-			if (solve(grid));
+			if (solve(grid))
 				return (1);
 			grid[row][col] = '.';
 		}
-		++i;
+		++num;
 	}
 	return (0);
 }
