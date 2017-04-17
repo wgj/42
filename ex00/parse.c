@@ -6,7 +6,7 @@
 /*   By: lkaser <lkaser@student.42.us.org>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/04/15 17:25:06 by lkaser            #+#    #+#             */
-/*   Updated: 2017/04/16 21:24:08 by lkaser           ###   ########.fr       */
+/*   Updated: 2017/04/16 21:26:36 by lkaser           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,16 +24,13 @@ int		len(char *str)
 
 void	print(char *str)
 {
-	int i;
-
-	i = 0;
-	while (i < 8)
+	while (*str && *(str + 1))
 	{
-		write(1, &str[i], 1);
+		write(1, str, 1);
 		write(1, " ", 1);
-		++i;
+		++str;
 	}
-	write(1, &str[i], 1);
+	write(1, str, 1);
 	write(1, "\n", 1);
 }
 
