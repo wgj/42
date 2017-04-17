@@ -6,11 +6,11 @@
 /*   By: wjohnson <wjohnson@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/04/15 18:56:06 by wjohnson          #+#    #+#             */
-/*   Updated: 2017/04/16 17:16:35 by wjohnson         ###   ########.fr       */
+/*   Updated: 2017/04/16 17:24:30 by wjohnson         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	is_vunit_valid(char square, int row, int col, char **grid)
+int	is_col_valid(char square, int row, int col, char **grid)
 {
 	int i;
 	char peer;
@@ -37,7 +37,7 @@ int	is_vunit_valid(char square, int row, int col, char **grid)
 	return (1);
 }
 
-int	is_hunit_valid(char square, int row, int col, char **grid) 
+int	is_row_valid(char square, int row, int col, char **grid) 
 {
 	// i am guessing the row, col is the current coordinate of square?
 	// It's the current coordinate of a "potential" square. If the tests pass, then it's safe to put `char square` into `grid[x][y]`. -wgj
@@ -59,7 +59,7 @@ int	is_hunit_valid(char square, int row, int col, char **grid)
 	}
 	return (1);
 }
-int	is_bunit_valid(char square, int row, int col, char **grid)
+int	is_box_valid(char square, int row, int col, char **grid)
 {
 	int corner_row;
 	int corner_col;
@@ -106,6 +106,5 @@ int	is_bunit_valid(char square, int row, int col, char **grid)
 */
 int	is_valid(char square, int row, int col, char **grid)
 {
-	// TODO rename bad function names.
-	return (is_vunit_valid(square, row, col, grid) && is_hunit_valid(square, row, col, grid) && is_bunit_valid(square, row, col, grid));
+	return (is_col_valid(square, row, col, grid) && is_row_valid(square, row, col, grid) && is_box_valid(square, row, col, grid));
 }
