@@ -6,7 +6,7 @@
 /*   By: wjohnson <wjohnson@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/04/15 18:56:06 by wjohnson          #+#    #+#             */
-/*   Updated: 2017/04/16 17:04:31 by wjohnson         ###   ########.fr       */
+/*   Updated: 2017/04/16 17:16:35 by wjohnson         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -106,7 +106,6 @@ int	is_bunit_valid(char square, int row, int col, char **grid)
 */
 int	is_valid(char square, int row, int col, char **grid)
 {
-	// TODO add function declaration to sudoku.h
 	// TODO rename bad function names.
 	return (is_vunit_valid(square, row, col, grid) && is_hunit_valid(square, row, col, grid) && is_bunit_valid(square, row, col, grid));
 }
