@@ -1,3 +1,4 @@
+#include <unistd.h>
 
 int	checkvalidmap(int *info)
 {
@@ -15,10 +16,10 @@ int	checkvalidmap(int *info)
 		if (test == info[2] || test == info[1])
 			counter++;
 		if (test == '\n')
-			linecount++:
+			linecount++;
 		i++;
 	}
-	if ((read(info[5], &test, 1) == 1)
+	if ((read(info[5], &test, 1) == 1))
 		return (0);
 	if (counter == info[4] * info[0] && linecount == info[0])
 		return (1);
