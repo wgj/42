@@ -1,4 +1,5 @@
-
+#include <stdlib.h>
+#include <unistd.h>
 #include "header.h"
 
 void    findnext(int *coor, int *info,int size, int n)

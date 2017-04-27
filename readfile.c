@@ -1,4 +1,6 @@
-
+#include <unistd.h>
+#include <stdlib.h>
+#include <fcntl.h>
 #include "header.h"
 
 char	**makestrings(int *info)
@@ -67,7 +69,7 @@ int    main(int ac, char **av)
 		searchforsquare(makestrings(info), info);
 		i++;
 		if (i < ac)
-			write(1, '\n', 1);
+			write(1, "\n", 1);
 	}
 	if (ac == 1)
 	{

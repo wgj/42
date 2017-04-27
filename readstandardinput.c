@@ -1,3 +1,6 @@
+#include <unistd.h>
+#include <stdlib.h>
+#include "header.h"
 
 char    **stdinpt_strings(int *info)
 {
