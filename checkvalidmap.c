@@ -6,7 +6,7 @@
 /*   By: wjohnson <wjohnson@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/04/26 23:22:56 by wjohnson          #+#    #+#             */
-/*   Updated: 2017/04/26 23:22:57 by wjohnson         ###   ########.fr       */
+/*   Updated: 2017/04/26 23:26:16 by wjohnson         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,10 @@
 
 int	checkvalidmap(int *info)
 {
-	char test;
-	int i;
-	int counter;
-	int linecount;
+	char	test;
+	int		i;
+	int		counter;
+	int		linecount;
 
 	i = 0;
 	linecount = 0;
