@@ -1,4 +1,6 @@
-
+#include <stdio.h>
+#include <stdlib.h>
+#include <unistd.h>
 #include "header.h"
 
 void	printresult(char **field, int size, int *bestcoor, int *info)
